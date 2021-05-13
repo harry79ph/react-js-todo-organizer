@@ -79,6 +79,7 @@ input.btn{
 }
 .container > div{
   margin: 10px;
+  min-height: 350px;
   flex: 1 1 400px;
   border-radius: 10px;
   background-color: var(--main-colour);
