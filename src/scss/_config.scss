@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500&display=swap");
+
+$main-colour: #17a589;
+$item-color: #e6fcf7;
+$shadow-color: rgba(0, 0, 0, 0.12);
+$background-color: #f9fffe;
+$font-stack: "Noto Sans HK", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  min-height: 800px;
+}
+
+.wrapper {
+  margin: 10px auto;
+}
+
+button {
+  cursor: pointer;
+}

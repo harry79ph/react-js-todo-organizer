@@ -1,0 +1,198 @@
+@import "config";
+
+// AddItem
+.add {
+  h1 {
+    color: $main-colour;
+    text-align: center;
+  }
+  label {
+    margin: 5px;
+    font-size: 20px;
+    color: $main-colour;
+  }
+  input,
+  textarea {
+    padding: 10px 16px;
+    font-family: $font-stack;
+    outline: none;
+    font-size: 16px;
+    flex-grow: 1;
+    border: 1px solid $main-colour;
+    border-radius: 5px;
+    background: $background-color;
+    box-shadow: 2px 3px 8px $shadow-color;
+  }
+  .adder {
+    max-width: 1200px;
+    margin: 20px auto;
+    form {
+      padding: 2px;
+      display: flex;
+      flex-direction: column;
+    }
+    .title,
+    .content {
+      display: flex;
+      margin: 20px;
+    }
+    .title {
+      margin: 0 30px;
+    }
+    .btn-wrapper {
+      display: flex;
+      justify-content: center;
+      .btn {
+        max-width: 130px;
+        font-family: $font-stack;
+        font-size: 20px;
+        padding: 3px 8px;
+        cursor: pointer;
+        color: $background-color;
+        border: 0;
+        background-image: linear-gradient(to right, #76d7c4, #17a589);
+        box-shadow: 2px 3px 8px $shadow-color;
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+// DetailsPanel
+.container {
+  min-height: 300px;
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    margin: 10px;
+    min-height: 350px;
+    flex: 1 1 400px;
+    border-radius: 10px;
+    background-color: $background-color;
+    border: 1px solid $main-colour;
+    box-shadow: 2px 3px 8px $shadow-color;
+  }
+  div h3 {
+    text-align: center;
+    font-size: 20px;
+    margin: 5px 0;
+    color: $main-colour;
+  }
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border-radius: 10px;
+    .item {
+      height: 75px;
+      width: 250px;
+      margin: 5px;
+      background-color: $item-color;
+      position: relative;
+      box-sizing: border-box;
+      padding: 10px;
+      border-radius: 5px;
+      display: block;
+      box-shadow: 2px 3px 8px $shadow-color;
+      p {
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
+      &.bold {
+        font-weight: 500;
+      }
+      .buttons {
+        text-align: center;
+        button {
+          background: $main-colour;
+          color: $background-color;
+          font-weight: 20px;
+          width: 20px;
+          border: 0;
+          border-radius: 50%;
+          padding: 2px;
+          margin: 2px 6px;
+          &:hover {
+            background: lighten($main-colour, 10);
+          }
+          i {
+            font-size: 15px;
+            width: 15px;
+          }
+        }
+      }
+      .explain {
+        position: absolute;
+        background-color: $item-color;
+        width: 300px;
+        height: 200px;
+        border-radius: 5px;
+        z-index: 2;
+        top: 76px;
+        left: -25px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transform-origin: top;
+        transform: rotateX(90deg);
+        transition: 0.4s ease-in-out;
+        box-shadow: 2px 3px 8px $shadow-color;
+        &.active {
+          display: flex;
+          transform: rotateX(0deg);
+        }
+        p {
+          overflow-y: auto;
+          margin: 3% 1% 0 4%;
+        }
+      }
+    }
+  }
+}
+
+// Tooltip
+i > .tooltip {
+  font-family: $font-stack;
+  font-weight: 500;
+  font-size: 14px;
+}
+i:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  width: 120px;
+  background-color: rgba(20, 219, 169, 0.95);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 40%;
+  left: 41%;
+  margin-left: -40px;
+  transition-delay: 1s;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(20, 219, 169, 0.95) transparent transparent transparent;
+  }
+  &.down::after {
+    left: 53%;
+  }
+  &.trash::after {
+    left: 80%;
+  }
+}
