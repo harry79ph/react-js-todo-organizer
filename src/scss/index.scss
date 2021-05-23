@@ -11,18 +11,6 @@
     font-size: 20px;
     color: $main-colour;
   }
-  input,
-  textarea {
-    padding: 10px 16px;
-    font-family: $font-stack;
-    outline: none;
-    font-size: 16px;
-    flex-grow: 1;
-    border: 1px solid $main-colour;
-    border-radius: 5px;
-    background: $background-color;
-    box-shadow: 2px 3px 8px $shadow-color;
-  }
   .adder {
     max-width: 1200px;
     margin: 20px auto;
@@ -38,6 +26,14 @@
     }
     .title {
       margin: 0 30px;
+    }
+    input {
+      flex-grow: 1;
+      @include form-elements(20px)
+    }
+    textarea {
+      flex-grow: 1;
+      @include form-elements(16px);
     }
     .btn-wrapper {
       display: flex;
