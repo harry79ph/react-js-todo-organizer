@@ -23,3 +23,14 @@ body {
 button {
   cursor: pointer;
 }
+
+@mixin form-elements($size) {
+  padding: 10px 16px;
+  font-family: $font-stack;
+  outline: none;
+  font-size: $size;
+  border: 1px solid $main-colour;
+  border-radius: 5px;
+  background: $background-color;
+  box-shadow: 2px 3px 8px $shadow-color;
+}
