@@ -86,9 +86,13 @@ button {
   cursor: pointer;
   color: #f9fffe;
   border: 0;
-  background-image: linear-gradient(to right, #76d7c4, #17a589);
+  background: #17a589;
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.12);
   margin: 0 20px;
+}
+
+.add .adder .btn-wrapper .btn:hover {
+  background-image: radial-gradient(circle, #76d7c4 0%, rgba(23, 165, 137, 0.695116) 100%);
 }
 
 .container {
