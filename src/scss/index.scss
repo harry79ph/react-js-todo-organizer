@@ -46,9 +46,12 @@
         cursor: pointer;
         color: $background-color;
         border: 0;
-        background-image: linear-gradient(to right, #76d7c4, #17a589);
+        background: $main-colour;
         box-shadow: 2px 3px 8px $shadow-color;
         margin: 0 20px;
+      }
+      .btn:hover{
+        background-image: radial-gradient(circle, rgba(118,215,196,1) 0%, rgba(23,165,137,0.6951155462184874) 100%);
       }
     }
   }
