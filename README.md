@@ -1,7 +1,3 @@
-There are two sections: Candos and Todos. Each time when a new item created, it first goes into Candos section. Then it is up to the user to move that item to Todos section by clicking on right arrow button or delete it by clicking on delete button.
-Later if the user changes their mind they can move it back to Candos section by clicking left arrow button.
-If the user hover on any button a tooltip appears for that button.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

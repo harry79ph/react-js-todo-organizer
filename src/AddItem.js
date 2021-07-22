@@ -10,7 +10,7 @@ const AddItem = (props) => {
         e.target.reset();
     }
 
-    const addToLocale = (types) => {// adds condo and todo items to local strorage
+    const addToLocale = (types) => {// adds cando and todo items to local strorage
         types.forEach(type => {
           function clearAll() {// clears local storage for cando and todo items
             for (let i = 0; i < localStorage.length; i++) {
@@ -51,7 +51,7 @@ const AddItem = (props) => {
                     <input type="text" name="title" maxLength="28" placeholder="Add Title" required />
                 </div>
                 <div className="content">
-                    <textarea name="content" rows="6" cols="20" placeholder="Add Content" maxLength="300" required></textarea>
+                    <textarea name="content" rows="6" cols="20" placeholder="Add Content" maxLength="500" required></textarea>
                 </div>
                 <div className="btn-wrapper">
                     <input className="btn" type="submit" value="Submit" />

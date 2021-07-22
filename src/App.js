@@ -21,7 +21,7 @@ const App = () => {
     stateSetter((prev) => prev.filter((arg, i) => i !== parseInt(id)));
   };
   const switchItems = (id, type) => {
-    // swithes items between candos and todos
+    // switches items between candos and todos
     if (type.includes("fa-arrow-right")) {
       setTodos((prev) => [
         ...prev,
