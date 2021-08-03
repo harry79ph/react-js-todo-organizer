@@ -1,6 +1,6 @@
 # Todo Organizer
 
-Todo Organizer is a todo planner app to help users to make their decisions by considering choices (candos) and making decisions (todos). It is built with **React** and **Sass** and it uses **Local Storage** to store items for later.
+Todo Organizer is a todo planner app to help users to make their decisions by considering choices (candos) and making decisions (todos). It is built with **React** and **Sass** and it uses **Local Storage** to store items for later. Here you can see desktop and mobile view of the app:
 
 ![todo-organizer](https://user-images.githubusercontent.com/73724613/126723005-7a3a8b37-4382-422c-85ed-d81a9cd5621d.jpg)
 
