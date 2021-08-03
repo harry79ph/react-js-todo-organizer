@@ -12,7 +12,7 @@ As you can see, there are two sections for items: Candos and Todos and each item
 If user hovers over one of those buttons, a tooltip will appear about its function.
 
 ## Creating an item
-To create an item user fills in the form and click submit button. Items first go directly to Candos section when they created and then they can be moved from Candos section to Todos section using Move button.
+To create an item, users fill in the form and click submit button. Items first go directly to Candos section when they created and then they can be moved from Candos section to Todos section clicking Move button.
 ## Moving items between Candos and Todos sections
 Items can be replaced between the two sections by clicking Move button at any time.
 ## Deleting an item
@@ -20,4 +20,4 @@ Items can be deleted by clicking on Delete button.
 ## Extending an item (opening description section of each item)
 Users can open the content section of the item by clicking on Extend button. The same button can be used to close the content back.
 ## Saving items for later
-All items can be saved into local storage by clicking on Save button at that time for later views. So when user comes back later to the app all the saved items will be showing up again. If new item(s) added or existing one(s) deleted, this button can be used again to update the items in local storage. If user wants to clear up the storage, they can delete all the items and click on Save button.
+All items can be saved into local storage by clicking on Save button at that time for later views. So when user comes back later to the app, all the saved items will be showing up again. If new item(s) added or existing one(s) deleted, this button can be used again to update the items in local storage. If the user wants to clear up the storage, they can delete all the items and click on Save button again.
