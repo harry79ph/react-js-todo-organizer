@@ -4,13 +4,13 @@ const AddItem = (props) => {
 
     const btnRef = useRef();
 
-    const onFormSubmit = (e) => {
+    const onFormSubmit = e => {
         e.preventDefault();
         props.onUserSubmit(e.target[0].value, e.target[1].value);
         e.target.reset();
     }
 
-    const addToLocale = (types) => {// adds cando and todo items to local strorage
+    const addToLocale = types => {// adds cando and todo items to local strorage
         types.forEach(type => {
           function clearAll() {// clears local storage for cando and todo items
             for (let i = 0; i < localStorage.length; i++) {
@@ -40,7 +40,7 @@ const AddItem = (props) => {
         btnRef.current.value = 'Updated..';
         setTimeout(() => {
             btnRef.current.value = 'Save';
-        }, 1000);       
+        }, 2000);       
     }
 
     return (

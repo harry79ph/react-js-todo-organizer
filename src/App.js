@@ -9,21 +9,21 @@ const App = () => {
 
   const setNewItem = (titleValue, contentValue) => {
     // creates a new item
-    setCandos((prev) => [
+    setCandos(prev => [
       ...prev,
-      { title: titleValue, content: contentValue },
+      { title: titleValue, content: contentValue }
     ]);
   };
   const deleteItem = (id, type) => {
     // deletes item
     let stateSetter = null;
     type === "cando" ? (stateSetter = setCandos) : (stateSetter = setTodos);
-    stateSetter((prev) => prev.filter((arg, i) => i !== parseInt(id)));
+    stateSetter(prev => prev.filter((arg, i) => i !== parseInt(id)));
   };
   const switchItems = (id, type) => {
     // switches items between candos and todos
     if (type.includes("fa-arrow-right")) {
-      setTodos((prev) => [
+      setTodos(prev => [
         ...prev,
         { title: candos[id].title, content: candos[id].content },
       ]);
@@ -35,7 +35,7 @@ const App = () => {
     }
   };
 
-  const retrieveItems = (types) => {
+  const retrieveItems = types => {
     // retrieves cando and todo items from local storage
     types.forEach((type) => {
       let stateSetter = null;

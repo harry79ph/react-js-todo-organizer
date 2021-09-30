@@ -4,7 +4,14 @@ const DetailsPanel = (props) => {
 
     const { candos, todos, deleteItem, onSwitch } = props;
 
-    const handleClick = (e) => {
+    const handleClick = e => {
+        console.log(e);
+        //e.target.style.transform = e.target.style.transform ? 'rotate(0deg)' : 'rotate(180deg)';
+        // console.log(e.target.className);
+        // if (e.target.className.includes('fas')) {
+        //     e.target.className = e.target.className === 'fas fa-chevron-down' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+        // }
+        
         const item = e.target.parentNode.parentNode.parentNode;
         const id = item.id;
         const toggleContent = () => {
@@ -16,6 +23,7 @@ const DetailsPanel = (props) => {
                     } else {
                         each.children[2].className = 'explain';
                     }
+                    //each.children[2].className = each.children[2].className !== 'explain active' ? 'explain active' : 'explain';
                 } else {
                     each.children[2].className = 'explain';
                 }
@@ -34,7 +42,7 @@ const DetailsPanel = (props) => {
         }
     }
 
-    const lister = (group) => {
+    const lister = group => {
         let [firstClass, secondClass, items] = [];
         if (group === 'candos') {
             [firstClass, secondClass, items] = ['item cando', 'fas fa-arrow-right', candos];

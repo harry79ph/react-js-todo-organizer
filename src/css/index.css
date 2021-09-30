@@ -80,7 +80,6 @@ button {
 
 .add .adder .btn-wrapper .btn {
   max-width: 130px;
-  font-family: "Noto Sans HK", sans-serif;
   font-size: 20px;
   padding: 5px 8px;
   cursor: pointer;
@@ -182,7 +181,7 @@ button {
   position: absolute;
   background-color: #e6fcf7;
   width: 300px;
-  min-height: 200px;
+  min-height: 100px;
   border-radius: 5px;
   z-index: 2;
   top: 76px;
