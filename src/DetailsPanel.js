@@ -5,25 +5,13 @@ const DetailsPanel = (props) => {
     const { candos, todos, deleteItem, onSwitch } = props;
 
     const handleClick = e => {
-        console.log(e);
-        //e.target.style.transform = e.target.style.transform ? 'rotate(0deg)' : 'rotate(180deg)';
-        // console.log(e.target.className);
-        // if (e.target.className.includes('fas')) {
-        //     e.target.className = e.target.className === 'fas fa-chevron-down' ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
-        // }
-        
         const item = e.target.parentNode.parentNode.parentNode;
         const id = item.id;
         const toggleContent = () => {
             const items = item.parentNode.childNodes;
             items.forEach((each, i) => {
                 if (i === parseInt(id)) {
-                    if (each.children[2].className !== 'explain active') {
-                        each.children[2].className = 'explain active';
-                    } else {
-                        each.children[2].className = 'explain';
-                    }
-                    //each.children[2].className = each.children[2].className !== 'explain active' ? 'explain active' : 'explain';
+                    each.children[2].className = each.children[2].className !== 'explain active' ? 'explain active' : 'explain';
                 } else {
                     each.children[2].className = 'explain';
                 }
