@@ -18,22 +18,22 @@
       padding: 2px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
     }
     .title,
     .content {
-      display: flex;
       margin: 20px;
     }
-    .title {
-      margin: 0 30px;
-    }
     input {
-      flex-grow: 1;
-      @include form-elements(20px)
+      @include form-elements(20px);
+      width: calc(100% - 10vw);
+      margin: 0 5vw;
     }
     textarea {
-      flex-grow: 1;
       @include form-elements(16px);
+      width: 100%;
     }
     .btn-wrapper {
       display: flex;
@@ -85,7 +85,6 @@
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-around;
-    box-sizing: border-box;
     border-radius: 10px;
     .item {
       height: 75px;
@@ -93,7 +92,6 @@
       margin: 5px;
       background-color: $item-color;
       position: relative;
-      box-sizing: border-box;
       padding: 10px;
       border-radius: 5px;
       display: block;
