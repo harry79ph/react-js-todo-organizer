@@ -51,7 +51,7 @@ const AddItem = (props) => {
                     <input type="text" name="title" maxLength="28" placeholder="Add Title" required />
                 </div>
                 <div className="content">
-                    <textarea name="content" rows="6" cols="20" placeholder="Add Content" maxLength="500" required></textarea>
+                    <textarea name="content" rows="6" cols="20" placeholder="Add Content" maxLength="1000" required></textarea>
                 </div>
                 <div className="btn-wrapper">
                     <input className="btn" type="submit" value="Submit" />
