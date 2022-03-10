@@ -50,15 +50,27 @@
         margin: 0 20px;
         transition: all 0.3s ease-out;
       }
-      .btn:hover{
+      .btn:hover {
         color: $background-color;
-        background-image: radial-gradient(circle, rgba(118,215,196,1) 0%, rgba(23,165,137,0.6951155462184874) 100%);
+        background-image: radial-gradient(
+          circle,
+          rgba(118, 215, 196, 1) 0%,
+          rgba(23, 165, 137, 0.6951155462184874) 100%
+        );
       }
     }
   }
 }
 
 // DetailsPanel
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .container {
   min-height: 300px;
   margin: 30px;
@@ -96,6 +108,10 @@
       border-radius: 5px;
       display: block;
       box-shadow: 2px 3px 8px $shadow-color;
+      animation-name: fade;
+      animation-duration: 1s;
+      animation-iteration-count: initial;
+      animation-timing-function: ease-out;
       p {
         text-align: center;
         padding: 10px;
