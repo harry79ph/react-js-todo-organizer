@@ -1,15 +1,14 @@
 import React, { useRef, useState } from 'react';
 
-const AddItem = (props) => {
+const AddItem = ({ candos, todos, onUserSubmit }) => {
 
     const btnRef = useRef();
-
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        props.onUserSubmit(title, content);
+        onUserSubmit('cando', title, content, false);
         setTitle('');
         setContent('');
     }
@@ -24,7 +23,7 @@ const AddItem = (props) => {
           }
           clearAll();
           let type_of_state = null;
-          type === 'cando' ? type_of_state = props.candos : type_of_state = props.todos;      
+          type === 'cando' ? type_of_state = candos : type_of_state = todos;      
           if (type_of_state.length !== 0) {
             type_of_state.forEach((each, index) => {
               const key = type + index;
@@ -37,7 +36,6 @@ const AddItem = (props) => {
           }
         });
     }
-
 
     const handleSave = () => {
         addToLocale(['cando', 'todo']);

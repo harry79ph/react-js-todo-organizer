@@ -116,7 +116,7 @@
       display: block;
       box-shadow: 2px 3px 8px $shadow-color;
       animation-name: fade;
-      animation-duration: 1s;
+      animation-duration: 0.7s;
       animation-iteration-count: initial;
       animation-timing-function: ease-out;
       p {
@@ -129,7 +129,14 @@
       }
       .buttons {
         text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
         button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           background: $main-colour;
           color: $background-color;
           font-weight: 20px;
@@ -147,9 +154,9 @@
           }
         }
       }
-      .explain {
+      #explain {
         position: absolute;
-        background-color: $item-color;
+        background-color: rgba($color: $item-color, $alpha: 0.9);
         width: 300px;
         min-height: 100px;
         border-radius: 5px;

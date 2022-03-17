@@ -7,31 +7,32 @@ const App = () => {
   const [candos, setCandos] = useState([]);
   const [todos, setTodos] = useState([]);
 
-  const setNewItem = (titleValue, contentValue) => {
+  const setNewItem = (className, titleValue, contentValue, isActive) => {
     // creates a new item
     setCandos(prev => [
       ...prev,
-      { title: titleValue, content: contentValue }
+      { className, title: titleValue, content: contentValue, isActive }
     ]);
   };
-  const deleteItem = (id, type) => {
+
+  const deleteItem = ({ className, title }) => {
     // deletes item
     let stateSetter = null;
-    type === "cando" ? (stateSetter = setCandos) : (stateSetter = setTodos);
-    stateSetter(prev => prev.filter((arg, i) => i !== parseInt(id)));
+    className === "cando" ? (stateSetter = setCandos) : (stateSetter = setTodos);
+    stateSetter(prev => prev.filter((item) => item.title !== title));
   };
-  const switchItems = (id, type) => {
+
+  const switchItems = (item) => {
     // switches items between candos and todos
-    if (type.includes("fa-arrow-right")) {
+    if (item.className === 'cando') {
       setTodos(prev => [
         ...prev,
-        { title: candos[id].title, content: candos[id].content },
+        { className: 'todo', title: item.title, content: item.content, isActive: false }
       ]);
-      deleteItem(id, "cando");
-    } else if (type.includes("fa-arrow-left")) {
-      const { title, content } = todos[id];
-      setNewItem(title, content);
-      deleteItem(id, "todo");
+      deleteItem(item);
+    } else {
+      setNewItem('cando', item.title, item.content, false);
+      deleteItem(item);
     }
   };
 
@@ -46,8 +47,7 @@ const App = () => {
         const json = localStorage.getItem(type + i);
         const arr = JSON.parse(json);
         const [title, content] = [arr[0], arr[1]];
-        console.log(title, content);
-        stateSetter((prev) => [...prev, { title: title, content: content }]);
+        stateSetter((prev) => [...prev, { className: type, title: title, content: content, isActive: false }]);
       }
     });
   };
@@ -62,6 +62,8 @@ const App = () => {
       <DetailsPanel
         candos={candos}
         todos={todos}
+        setCandos={setCandos}
+        setTodos={setTodos}
         deleteItem={deleteItem}
         onSwitch={switchItems}
       />
