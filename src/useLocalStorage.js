@@ -35,7 +35,7 @@ const useLocalStorage = () => {
             const json = localStorage.getItem(type + i);
             const arr = JSON.parse(json);
             const [title, content] = [arr[0], arr[1]];
-            stateSetter((prev) => [...prev, { className: type, title: title, content: content, isActive: false }]);
+            stateSetter((prev) => [...prev, { className: type + " disabled", title: title, content: content, isActive: false }]);
           }
         });
       };

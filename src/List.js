@@ -15,16 +15,16 @@ const List = ({ candos, todos, setCandos, setTodos, deleteItem, onSwitch, group 
         }
     }
 
-    let [firstClass, secondClass, items] = [];
+    let [secondClass, items] = [];
     if (group === 'candos') {
-        [firstClass, secondClass, items] = ['item cando', 'fas fa-arrow-right', candos];
+        [secondClass, items] = ['fas fa-arrow-right', candos];
     } else if (group === 'todos') {
-        [firstClass, secondClass, items] = ['item todo', 'fas fa-arrow-left', todos];
+        [secondClass, items] = ['fas fa-arrow-left', todos];
     }
 
     return items.map((item, key) => {
         return (
-            <div className={firstClass} key={item.className + key}>
+            <div className={'item '+ item.className} key={item.className + key}>
                 <p className="bold">{item.title}</p>
                 <div className="buttons">
                     <button onClick={() => onSwitch(item)}><i className={secondClass}><span className="tooltip">Move item</span></i></button>

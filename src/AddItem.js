@@ -10,7 +10,7 @@ const AddItem = ({ candos, todos, onUserSubmit }) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        onUserSubmit('cando', title, content, false);
+        onUserSubmit('cando disabled', title, content, false);
         setTitle('');
         setContent('');
     }
