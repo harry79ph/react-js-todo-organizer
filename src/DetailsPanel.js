@@ -13,13 +13,10 @@ const DetailsPanel = (props) => {
             <h3>{group}</h3>
             <div className="box">
               <List
-                candos={candos}
-                todos={todos}
-                setCandos={setCandos}
-                setTodos={setTodos}
+                state={group === 'candos' ? candos : todos}
+                stateSetter={group === 'candos' ? setCandos : setTodos}
                 deleteItem={deleteItem}
                 onSwitch={onSwitch}
-                group={group}
               />
             </div>
           </div>);

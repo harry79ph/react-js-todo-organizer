@@ -1,33 +1,19 @@
 
-const List = ({ candos, todos, setCandos, setTodos, deleteItem, onSwitch, group }) => {
+const List = ({ state, stateSetter, deleteItem, onSwitch }) => {
 
     const handleClick = (item) => {
-        if (item.className === 'cando') {
-            setCandos((prev) => {
-                return prev.map((cando) => cando.title === item.title ? cando.isActive === true ? 
-                {...cando, isActive: false} : {...cando, isActive: true} : cando);
-            });
-        } else {
-            setTodos((prev) => {
-                return prev.map((todo) => todo.title === item.title ? todo.isActive === true ? 
-                {...todo, isActive: false} : {...todo, isActive: true} : todo);
-            });
-        }
+        stateSetter((prevs) => {
+            return prevs.map((prev) => prev.title === item.title ? prev.isActive === true ? 
+            {...prev, isActive: false} : {...prev, isActive: true} : prev);
+        });
     }
 
-    let [secondClass, items] = [];
-    if (group === 'candos') {
-        [secondClass, items] = ['fas fa-arrow-right', candos];
-    } else {
-        [secondClass, items] = ['fas fa-arrow-left', todos];
-    }
-
-    return items.map((item, key) => {
+    return state.map((item, key) => {
         return (
             <div className={'item '+ item.className} key={item.className + key}>
                 <p className="bold">{item.title}</p>
                 <div className="buttons">
-                    <button onClick={() => onSwitch(item)}><i className={secondClass}><span className="tooltip">Move item</span></i></button>
+                    <button onClick={() => onSwitch(item)}><i className={item.className.includes('cando') ? 'fas fa-arrow-right' : 'fas fa-arrow-left'}><span className="tooltip">Move item</span></i></button>
                     <button onClick={() => handleClick(item)}><i className="fas fa-chevron-down"><span className="tooltip down">Expand item</span></i></button>
                     <button className="delete" onClick={() => deleteItem(item)}><i className="far fa-trash-alt"><span className="tooltip trash">Delete item</span></i></button>
                 </div>
