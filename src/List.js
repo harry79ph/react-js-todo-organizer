@@ -18,7 +18,7 @@ const List = ({ candos, todos, setCandos, setTodos, deleteItem, onSwitch, group 
     let [secondClass, items] = [];
     if (group === 'candos') {
         [secondClass, items] = ['fas fa-arrow-right', candos];
-    } else if (group === 'todos') {
+    } else {
         [secondClass, items] = ['fas fa-arrow-left', todos];
     }
 

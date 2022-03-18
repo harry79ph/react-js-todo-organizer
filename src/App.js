@@ -8,8 +8,6 @@ const App = () => {
   const [candos, setCandos] = useState([]);
   const [todos, setTodos] = useState([]);
   const { retrieveFromLocal } = useLocalStorage();
-  console.log(candos);
-  console.log(todos);
 
   useEffect(() => {
     retrieveFromLocal(["cando", "todo"], setCandos, setTodos);
@@ -25,12 +23,12 @@ const App = () => {
 
   const deleteItem = ({ className, title }) => {
     let stateSetter = null;
-    className === 'cando' || className === 'cando disabled' ? (stateSetter = setCandos) : (stateSetter = setTodos);
+    className.includes('cando') ? (stateSetter = setCandos) : (stateSetter = setTodos);
     stateSetter(prev => prev.filter((item) => item.title !== title));
   };
 
   const switchItems = (item) => {
-    if (item.className === 'cando' || item.className === 'cando disabled') {
+    if (item.className.includes('cando')) {
       setTodos(prev => [
         ...prev,
         { className: 'todo', title: item.title, content: item.content, isActive: false }
