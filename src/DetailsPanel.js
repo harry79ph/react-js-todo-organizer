@@ -1,7 +1,7 @@
 import List from "./List";
 
 const DetailsPanel = (props) => {
-    
+  
   const { candos, todos, setCandos, setTodos, deleteItem, onSwitch } = props;
 
   return (

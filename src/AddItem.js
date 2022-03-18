@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
+import useLocalStorage from './useLocalStorage';
 
 const AddItem = ({ candos, todos, onUserSubmit }) => {
 
     const btnRef = useRef();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
+    const { addToLocal } = useLocalStorage();
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -13,32 +15,8 @@ const AddItem = ({ candos, todos, onUserSubmit }) => {
         setContent('');
     }
 
-    const addToLocale = types => {// adds cando and todo items to local strorage
-        types.forEach(type => {
-          function clearAll() {// clears local storage for cando and todo items
-            for (let i = 0; i < localStorage.length; i++) {
-              const key = localStorage.key(i);
-              if (key && key.startsWith(type)) localStorage.removeItem(key);
-            }
-          }
-          clearAll();
-          let type_of_state = null;
-          type === 'cando' ? type_of_state = candos : type_of_state = todos;      
-          if (type_of_state.length !== 0) {
-            type_of_state.forEach((each, index) => {
-              const key = type + index;
-              const item = [each.title, each.content];
-              localStorage[key] = JSON.stringify(item);
-            });
-            localStorage.setItem(type + '_length', type_of_state.length);
-          } else {
-            clearAll();
-          }
-        });
-    }
-
     const handleSave = () => {
-        addToLocale(['cando', 'todo']);
+        addToLocal(['cando', 'todo'], candos, todos);
         btnRef.current.value = 'Updated..';
         setTimeout(() => {
             btnRef.current.value = 'Save';
