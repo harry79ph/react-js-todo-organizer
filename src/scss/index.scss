@@ -49,6 +49,9 @@
         box-shadow: 2px 3px 8px $shadow-color;
         margin: 0 20px;
         transition: all 0.3s ease-out;
+        &:focus {
+          background-color: rgba($main-colour, 0.5);
+        }
       }
       .btn:disabled {
         &, &:hover {
